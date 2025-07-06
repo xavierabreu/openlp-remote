@@ -5,40 +5,52 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>OpenLP Remote</title>
+
+    <!-- Load Inter font for clean, modern look -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
+
+    <!-- Link to your external CSS file -->
     <link rel="stylesheet" href="styles.css" />
 </head>
 
 <body>
     <div class="container">
+        <!-- Settings gear icon (opens the IP & port settings modal) -->
         <button class="settings-icon" onclick="toggleModal()">⚙️</button>
 
+        <!-- Main title -->
         <h1>OpenLP Remote</h1>
 
+        <!-- Navigation buttons (Previous & Next) -->
         <div class="button-group">
+            <!-- Previous Button -->
             <button class="action" onclick="send('/api/controller/live/previous')">
                 <span class="arrow">←</span>
                 <span class="label">Prev</span>
             </button>
+            <!-- Next Button -->
             <button class="action" onclick="send('/api/controller/live/next')">
                 <span class="arrow">→</span>
                 <span class="label">Next</span>
             </button>
         </div>
 
+        <!-- Network notice -->
         <p class="note">Make sure you're on the same Wi-Fi network as the OpenLP server.</p>
     </div>
 
-    <!-- Modal -->
+    <!-- Settings Modal (hidden until opened by gear icon) -->
     <div class="modal" id="settingsModal">
         <div class="modal-box">
             <h2>Server Settings</h2>
+            <!-- Input fields for IP address and port -->
             <input id="ip" placeholder="IP address (e.g. 192.168.1.50)" />
             <input id="port" placeholder="Port (default 4316)" value="4316" />
             <button onclick="saveSettings()">Save</button>
         </div>
     </div>
 
+    <!-- Link to your external JavaScript -->
     <script src="script.js"></script>
 </body>
 

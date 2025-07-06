@@ -1,13 +1,22 @@
+/* === Root Variables === */
 :root {
     --primary: #4f46e5;
+    /* Primary button color */
     --primary-hover: #4338ca;
+    /* Button color on hover */
     --text: #f3f4f6;
+    /* Main text color */
     --muted: #9ca3af;
+    /* Secondary text color (subtle) */
     --bg-glass: rgba(255, 255, 255, 0.05);
+    /* Glass background effect */
     --radius: 16px;
+    /* Border radius for rounded corners */
     --border: rgba(255, 255, 255, 0.15);
+    /* Border color for glass */
 }
 
+/* === Base Styles === */
 * {
     box-sizing: border-box;
     margin: 0;
@@ -17,14 +26,15 @@
 body {
     font-family: 'Inter', sans-serif;
     min-height: 100vh;
+    background: linear-gradient(135deg, #0f172a, #1e293b);
+    color: var(--text);
     display: flex;
     justify-content: center;
     align-items: center;
     padding: 1.5rem;
-    background: linear-gradient(135deg, #0f172a, #1e293b);
-    color: var(--text);
 }
 
+/* === Main Glass Container === */
 .container {
     background: var(--bg-glass);
     backdrop-filter: blur(20px);
@@ -38,6 +48,7 @@ body {
     text-align: center;
 }
 
+/* === Settings Gear Icon === */
 .settings-icon {
     position: absolute;
     top: 1rem;
@@ -49,23 +60,28 @@ body {
     color: var(--muted);
 }
 
+/* === Main Heading === */
 h1 {
     font-size: 1.6rem;
     font-weight: 600;
     margin-bottom: 1.75rem;
 }
 
+/* === Button Group (Prev & Next) === */
 .button-group {
     display: flex;
     flex-direction: row;
+    /* Always side by side */
     justify-content: center;
     gap: 1rem;
     margin-bottom: 1.25rem;
 }
 
+/* === Individual Buttons === */
 .action {
     flex: 1;
     aspect-ratio: 1 / 1;
+    /* Square buttons */
     min-width: 120px;
     max-width: 200px;
     background: var(--primary);
@@ -83,6 +99,7 @@ h1 {
 
 .action .arrow {
     font-size: 2rem;
+    /* Bigger arrow */
     line-height: 1;
     margin-bottom: 0.25rem;
 }
@@ -97,12 +114,14 @@ h1 {
     background: var(--primary-hover);
 }
 
+/* === Note Below Buttons === */
 .note {
     font-size: 0.85rem;
     color: var(--muted);
     margin-top: 0.75rem;
 }
 
+/* === Settings Modal Overlay === */
 .modal {
     position: fixed;
     inset: 0;
@@ -113,6 +132,7 @@ h1 {
     z-index: 10;
 }
 
+/* === Modal Box === */
 .modal-box {
     background: #1e293b;
     color: var(--text);
